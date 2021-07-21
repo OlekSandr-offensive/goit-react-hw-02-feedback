@@ -1,15 +1,22 @@
-const Controls = ({ onIncrementGood, onIncrementNeutral, onIncrementBad }) => (
-  <div className="container-button">
-    <button type="button" className="button" onClick={onIncrementGood}>
-      Good
-    </button>
-    <button type="button" className="button" onClick={onIncrementNeutral}>
-      Neutral
-    </button>
-    <button type="button" className="button" onClick={onIncrementBad}>
-      Bad
-    </button>
-  </div>
-);
+import './FeedbackOptions.scss';
 
-export default Controls;
+const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+  return (
+    <>
+      {options.map(option => {
+        return (
+          <button
+            type="button"
+            key={option}
+            name={option}
+            onClick={onLeaveFeedback}
+          >
+            {option.charAt(0).toUpperCase() + option.slice(1)}
+          </button>
+        );
+      })}
+    </>
+  );
+};
+
+export default FeedbackOptions;
