@@ -1,4 +1,5 @@
 import './FeedbackOptions.scss';
+import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
@@ -17,6 +18,11 @@ const FeedbackOptions = ({ onLeaveFeedback, options }) => {
       })}
     </>
   );
+};
+
+FeedbackOptions.protoType = {
+  onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
 };
 
 export default FeedbackOptions;
